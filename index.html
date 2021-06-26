@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>BookShare App</title>
+  <link rel="stylesheet" href="./App.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+ </head>
+ <body ng-app="bookshare">
+  <div ng-controller="login">
+   <div ng-hide="isLoggedin">
+    <h1 style="background-color: black; color: white; padding: 8px; font-size: 28px; width: 98%">Welcome to BookShare App</h1>
+    <div class="container">
+     <form>
+      <label>
+       Name:
+       <input type="text" ng-model="Name" />
+      </label>
+      <label>
+       Password:
+       <input type="text" ng-model="Password" />
+      </label>
+      <input type="submit" value="Submit" ng-click="loginUser()" />
+     </form>
+    </div>
+   </div>
+
+   <div ng-show="isLoggedin"><div ng-include="'./bookInfo'"></div></div>
+  </div>
+  <script src="./logic.js"></script>
+ </body>
+</html>
